@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.HardwareMaps;
 
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
@@ -8,6 +9,10 @@ public abstract class BaseHardwareMap {
     public DcMotor motor_front_left;
     public DcMotor motor_rear_right;
     public DcMotor motor_rear_left;
+
+    public ColorSensor colorSensor_right;
+    public ColorSensor colorSensor_left;
+
 
     // State used for updating telemetry
     private HardwareMap hwMap;

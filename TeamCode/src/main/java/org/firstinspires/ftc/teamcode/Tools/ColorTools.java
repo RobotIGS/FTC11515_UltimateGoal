@@ -63,6 +63,16 @@ public class ColorTools {
         return false;
     }
 
+    public boolean isWhite(ColorSensor colorSenseWhite) {
+        float[] hsvIsWhite = showHSV(colorSenseWhite);
+
+        if (hsvIsWhite[1] >= 160 && hsvIsWhite[2] <= 290) { //[0] 120, && hsvIsBlue[1] >= 2 &&  && hsvIsBlue[2] <= 7
+            return true;
+        }
+
+        return false;
+    }
+
 
     /**
      * the boolean gives a true back if the color has changed
