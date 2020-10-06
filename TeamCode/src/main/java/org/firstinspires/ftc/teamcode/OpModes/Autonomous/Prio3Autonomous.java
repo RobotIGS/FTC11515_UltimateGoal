@@ -1,13 +1,17 @@
 package org.firstinspires.ftc.teamcode.OpModes.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.OpMode;
+
 import org.firstinspires.ftc.teamcode.HardwareMaps.BaseHardwareMap;
 import org.firstinspires.ftc.teamcode.Tools.ColorEnum;
 import org.firstinspires.ftc.teamcode.Tools.ColorTools;
+import org.firstinspires.ftc.teamcode.Tools.GeneralTools;
 
-public abstract class SampleAutonomous extends LinearOpMode {
+public abstract class Prio3Autonomous extends LinearOpMode {
     BaseHardwareMap robot;
     ColorTools colorTools;
+    GeneralTools generalTools;
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -16,8 +20,8 @@ public abstract class SampleAutonomous extends LinearOpMode {
         run();
         waitForStart();
 
-        while (!colorTools.isWhite(robot.colorSensor_left) || !colorTools.isWhite(robot.colorSensor_right) && opModeIsActive()){
-            // Drive forward to the white line
+        if (opModeIsActive()) {
+            //drive forward to the rings
         }
 
         if (opModeIsActive()){
@@ -25,7 +29,23 @@ public abstract class SampleAutonomous extends LinearOpMode {
         }
 
         if (opModeIsActive()){
-            // we drive a little bit back
+
+           switch (generalTools.HowManyRings()){
+               case (0):
+                   //Drive to A (The white line)
+                   //Drive back behind the white line
+               break;
+
+               case (1):
+                   //Drive to B
+                   //Drive back behind the white line
+               break;
+
+               case (4):
+                   //Drive to C
+                   //Drive back behind the white line
+               break;
+           }
         }
 
         if (opModeIsActive()){
@@ -66,6 +86,7 @@ public abstract class SampleAutonomous extends LinearOpMode {
 
     public void initialize() {
         colorTools = new ColorTools();
+        generalTools = new GeneralTools(this, robot);
     }
 
     public abstract ColorEnum getAllianceColor();

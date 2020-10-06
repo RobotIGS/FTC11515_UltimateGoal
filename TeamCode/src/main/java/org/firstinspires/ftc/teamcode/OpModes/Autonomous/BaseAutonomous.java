@@ -16,51 +16,7 @@ public abstract class BaseAutonomous extends LinearOpMode {
         run();
         waitForStart();
 
-        while (!colorTools.isWhite(robot.colorSensor_left) || !colorTools.isWhite(robot.colorSensor_right) && opModeIsActive()){
-            // Drive forward to the white line
-        }
 
-        if (opModeIsActive()){
-            // stop
-        }
-
-        if (opModeIsActive()){
-            // we drive a little bit back
-        }
-
-        if (opModeIsActive()){
-            // stop
-        }
-
-        if (opModeIsActive()){
-            // we drive to the right
-        }
-
-        if (opModeIsActive()){
-            // stop
-        }
-
-        if (opModeIsActive()){
-            // shoot
-        }
-
-        if (opModeIsActive()){
-            for (int i = 0; i < 2; i++){
-                if (opModeIsActive()){
-                    // we drive to the right
-                    // stop
-                    // shoot
-                }
-            }
-        }
-
-        if (opModeIsActive()){
-            // Drive forward to the white line
-        }
-
-        if (opModeIsActive()){
-            // stop
-        }
 
     }
 

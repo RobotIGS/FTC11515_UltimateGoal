@@ -18,11 +18,11 @@ public class GeneralTools {
 
     /**
      * calculates number of rings
-     * @return double
+     * @return int
      * Paul.U
      */
-    public double HowManyRings() {
-        double ringNumber = 0;
+    public int HowManyRings() {
+        int ringNumber = 0;
 
         if (max >= robot.distanceSensor_left_down.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_left_down.getDistance(DistanceUnit.CM) || max >= robot.distanceSensor_right_down.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_right_down.getDistance(DistanceUnit.CM)){
             if (max >= robot.distanceSensor_left_up.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_left_up.getDistance(DistanceUnit.CM) || max >= robot.distanceSensor_right_up.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_right_up.getDistance(DistanceUnit.CM)) {
