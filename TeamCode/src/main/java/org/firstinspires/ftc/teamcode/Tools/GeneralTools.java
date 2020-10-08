@@ -1,19 +1,28 @@
 package org.firstinspires.ftc.teamcode.Tools;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 import org.firstinspires.ftc.teamcode.HardwareMaps.BaseHardwareMap;
+import org.firstinspires.ftc.teamcode.OpModes.Autonomous.BaseAutonomous;
 
 public class GeneralTools {
     private LinearOpMode opMode;
     BaseHardwareMap robot;
-    private double min, max; //Still need to be tested
+    ColorEnum allianceColor;
+    private double minStackHeight, maxStackHeight; //Still need to be tested
 
-    public GeneralTools(LinearOpMode opMode, BaseHardwareMap robot) {
+    public GeneralTools(LinearOpMode opMode, BaseHardwareMap robot, ColorEnum allianceColor) {
         this.opMode = opMode;
         this.robot = robot;
+        this.allianceColor = allianceColor;
+    }
 
+    public GeneralTools(BaseAutonomous opMode, BaseHardwareMap robot) {
+        this.opMode = opMode;
+        this.robot = robot;
+        this.allianceColor = opMode.getAllianceColor();
     }
 
     /**
@@ -21,11 +30,19 @@ public class GeneralTools {
      * @return int
      * Paul.U
      */
-    public int HowManyRings() {
+    public int getStarterStackHeight() {
         int ringNumber = 0;
 
-        if (max >= robot.distanceSensor_left_down.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_left_down.getDistance(DistanceUnit.CM) || max >= robot.distanceSensor_right_down.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_right_down.getDistance(DistanceUnit.CM)){
-            if (max >= robot.distanceSensor_left_up.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_left_up.getDistance(DistanceUnit.CM) || max >= robot.distanceSensor_right_up.getDistance(DistanceUnit.CM) || min <= robot.distanceSensor_right_up.getDistance(DistanceUnit.CM)) {
+        if (this.allianceColor == ColorEnum.Red) {
+            DistanceSensor distanceSensorUp = robot.distanceSensor_left_up;
+            DistanceSensor distanceSensorDown = robot.distanceSensor_left_down;
+        } else {
+            DistanceSensor distanceSensorUp = robot.distanceSensor_right_up;
+            DistanceSensor distanceSensorDown = robot.distanceSensor_right_down;
+        }
+
+        if (maxStackHeight >= distanceSensorDown.getDistance(DistanceUnit.CM) || minStackHeight <= distanceSensorDown.getDistance(DistanceUnit.CM)) {
+            if (maxStackHeight >= distanceSensorUp.getDistance(DistanceUnit.CM) || minStackHeight <= distanceSensorUp.getDistance(DistanceUnit.CM)) {
                 ringNumber = 4;
             } else {
                 ringNumber = 1;
@@ -35,5 +52,4 @@ public class GeneralTools {
         }
         return ringNumber;
     }
-
 }
