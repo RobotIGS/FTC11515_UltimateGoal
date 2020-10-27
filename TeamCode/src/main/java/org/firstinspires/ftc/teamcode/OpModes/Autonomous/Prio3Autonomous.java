@@ -11,22 +11,24 @@ public abstract class Prio3Autonomous extends BaseAutonomous {
             case (0):
                 //Drive to A (The white line)
                 //Drive back behind the white line
+                driveToFirstPowerTargetShootingPositionAC();
+                shootAllPowerTargets();
                 break;
 
             case (1):
                 //Drive to B
                 //Drive back behind the white line
+                driveToFirstPowerTargetShootingPositionB();
+                shootAllPowerTargets();
                 break;
 
             case (4):
                 //Drive to C
                 //Drive back behind the white line
+                driveToFirstPowerTargetShootingPositionAC();
+                shootAllPowerTargets();
                 break;
         }
-
-        driveToFirstPowerTargetShootingPosition();
-
-        shootAllPowerTargets();
 
         driveToWhiteLine();
     }
