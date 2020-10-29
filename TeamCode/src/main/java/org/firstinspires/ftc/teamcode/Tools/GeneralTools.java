@@ -33,12 +33,15 @@ public class GeneralTools {
     public int getStarterStackHeight() {
         int ringNumber = 0;
 
+        DistanceSensor distanceSensorUp;
+        DistanceSensor distanceSensorDown;
+
         if (this.allianceColor == ColorEnum.Red) {
-            DistanceSensor distanceSensorUp = robot.distanceSensor_left_up;
-            DistanceSensor distanceSensorDown = robot.distanceSensor_left_down;
+            distanceSensorUp = robot.distanceSensor_left_up;
+            distanceSensorDown = robot.distanceSensor_left_down;
         } else {
-            DistanceSensor distanceSensorUp = robot.distanceSensor_right_up;
-            DistanceSensor distanceSensorDown = robot.distanceSensor_right_down;
+            distanceSensorUp = robot.distanceSensor_right_up;
+            distanceSensorDown = robot.distanceSensor_right_down;
         }
 
         if (maxStackHeight >= distanceSensorDown.getDistance(DistanceUnit.CM) || minStackHeight <= distanceSensorDown.getDistance(DistanceUnit.CM)) {
