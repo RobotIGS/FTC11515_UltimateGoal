@@ -15,6 +15,6 @@ public class SingleMotorTest extends OpMode {
 
     @Override
     public void loop() {
-        this.robot.motor_front_right.setPower(gamepad1.left_trigger);
+        this.robot.motor_front_right.setPower(gamepad1.right_stick_y);
     }
 }
