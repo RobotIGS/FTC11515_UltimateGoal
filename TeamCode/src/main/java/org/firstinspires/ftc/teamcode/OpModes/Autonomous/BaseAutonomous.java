@@ -60,6 +60,12 @@ public abstract class BaseAutonomous extends LinearOpMode {
         // TODO: implement
     }
 
+    public void driveToFirstPowerTargetShootingPosition() {
+        if (!opModeIsActive()) return;
+
+        // TODO: implement, check if AC or B
+    }
+
     public void driveToFirstPowerTargetShootingPositionAC() {
         if (!opModeIsActive()) return;
 
