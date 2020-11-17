@@ -18,7 +18,7 @@ public class SingleMotorTest extends OpMode {
     @Override
     public void loop() {
         this.robot.motor_front_right.setPower(gamepad1.right_stick_y);
-        telemetry.addData("Sensor left down:", robot.distanceSensor_left_down); //Move into own class (Paul.U)
+
     }
 
 }

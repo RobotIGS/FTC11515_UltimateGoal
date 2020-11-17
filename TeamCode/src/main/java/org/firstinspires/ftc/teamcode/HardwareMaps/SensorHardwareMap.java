@@ -1,5 +1,8 @@
 package org.firstinspires.ftc.teamcode.HardwareMaps;
 
+import android.hardware.Sensor;
+
+import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
@@ -11,11 +14,11 @@ public class SensorHardwareMap extends BaseHardwareMap{
 
     @Override
     public void init(HardwareMap hwMap) {
-        this.distanceSensor_left_down.getDistance(DistanceUnit.CM);
-        this.distanceSensor_left_up.getDistance(DistanceUnit.CM);
-        this.distanceSensor_right_down.getDistance(DistanceUnit.CM);
-        this.distanceSensor_right_up.getDistance(DistanceUnit.CM);
-
+        this.distanceSensor_left_down = hwMap.get(DistanceSensor.class, "Distancesensor_Left_Down");
+        this.distanceSensor_left_up = hwMap.get(DistanceSensor.class, "Distancesensor_Left_Up");
+        this.distanceSensor_right_down = hwMap.get(DistanceSensor.class, "Distancesensor_Right_Down");
+        this.distanceSensor_right_up = hwMap.get(DistanceSensor.class,"Distancesensor_Right_Up");
+//Divice
 
     }
 }
