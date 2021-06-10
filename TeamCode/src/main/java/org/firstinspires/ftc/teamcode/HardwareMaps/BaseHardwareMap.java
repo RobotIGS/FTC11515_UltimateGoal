@@ -1,18 +1,18 @@
 package org.firstinspires.ftc.teamcode.HardwareMaps;
 
-import com.qualcomm.robotcore.hardware.ColorSensor;
-import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.DistanceSensor;
-import com.qualcomm.robotcore.hardware.HardwareMap;
+import com.qualcomm.robotcore.hardware.*;
 
 public abstract class BaseHardwareMap {
     public DcMotor motor_front_right;
     public DcMotor motor_front_left;
     public DcMotor motor_rear_right;
     public DcMotor motor_rear_left;
-    public DcMotor motor_conveyor;
-    public DcMotor motor_shooter_left;
-    public DcMotor motor_shooter_right;
+    public DcMotor motor_flyingwheel_left;
+    public DcMotor motor_flyingwheel_right;
+    public DcMotor motor_collector;
+    public DcMotor motor_gripper;
+
+    public Servo servo_conveyor;
 
     public ColorSensor colorSensor_right;
     public ColorSensor colorSensor_left;

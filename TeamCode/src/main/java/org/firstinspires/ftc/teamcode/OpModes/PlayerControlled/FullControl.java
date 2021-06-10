@@ -11,19 +11,17 @@ public class FullControl extends OpMode {
 
     @Override
     public void init() {
-        this.robot = new FullHardwareMap(hardwareMap);
+        robot = new FullHardwareMap(hardwareMap);
     }
 
     @Override
     public void loop() {
-        robot.motor_conveyor.setPower(gamepad1.right_stick_y);
-
         if (gamepad1.b) {
-            robot.motor_shooter_left.setPower(1);
-            robot.motor_shooter_right.setPower(-1);
-        } else {
-            robot.motor_shooter_left.setPower(0);
-            robot.motor_shooter_right.setPower(0);
+            robot.motor_flyingwheel_left.setPower(1);
+            robot.motor_flyingwheel_right.setPower(-1);
+        } else if (gamepad1.a) {
+            robot.motor_flyingwheel_left.setPower(0);
+            robot.motor_flyingwheel_right.setPower(0);
         }
     }
 }
