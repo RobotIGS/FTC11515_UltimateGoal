@@ -13,6 +13,11 @@ public class GeneralTools {
     ColorEnum allianceColor;
     private double minStackHeight, maxStackHeight; //Still need to be tested
 
+    public static double WHEEL_RADIUS = 5.0;
+    public static double SIDE_DISTANCE = 38;
+    public static double FRONT_BACK_DISTANCE = 24;
+
+
     public GeneralTools(LinearOpMode opMode, BaseHardwareMap robot, ColorEnum allianceColor) {
         this.opMode = opMode;
         this.robot = robot;
