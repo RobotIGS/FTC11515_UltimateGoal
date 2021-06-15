@@ -4,7 +4,7 @@ import com.qualcomm.robotcore.hardware.*;
 
 import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
-public class FullHardwareMap extends BaseHardwareMap{
+public class FullHardwareMap extends BaseHardwareMap {
     public FullHardwareMap(HardwareMap hwMap) {
         super(hwMap);
     }
