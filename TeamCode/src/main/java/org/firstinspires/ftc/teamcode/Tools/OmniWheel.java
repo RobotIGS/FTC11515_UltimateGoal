@@ -34,6 +34,12 @@ public class OmniWheel {
         return y;
     }
 
+    /**
+     * If a value in the array is bigger than 1 or lower than -1, round to the nearest value in -1,1.
+     *
+     * @param originalValues
+     * @return array of new values
+     */
     public static double[] maxToOne(double[] originalValues) {
         double[] outputValues = {0,0,0,0};
         for (int i = 0; i < originalValues.length; i++) {
