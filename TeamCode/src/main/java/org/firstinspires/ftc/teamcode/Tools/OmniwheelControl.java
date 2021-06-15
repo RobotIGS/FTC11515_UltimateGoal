@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode.Tools;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
 import org.firstinspires.ftc.robotcore.external.Telemetry;
-
 import org.firstinspires.ftc.teamcode.HardwareMaps.BaseHardwareMap;
 
 public class OmniwheelControl {

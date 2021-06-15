@@ -1,11 +1,7 @@
 package org.firstinspires.ftc.teamcode.HardwareMaps;
 
-import android.hardware.Sensor;
-
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-
-import org.firstinspires.ftc.robotcore.external.navigation.DistanceUnit;
 
 public class SensorHardwareMap extends BaseHardwareMap{
     public SensorHardwareMap(HardwareMap hwMap) {

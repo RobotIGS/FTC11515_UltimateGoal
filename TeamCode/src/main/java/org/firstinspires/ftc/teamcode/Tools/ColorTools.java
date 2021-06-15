@@ -2,7 +2,6 @@ package org.firstinspires.ftc.teamcode.Tools;
 
 
 import android.graphics.Color;
-
 import com.qualcomm.robotcore.hardware.ColorSensor;
 
 import java.util.LinkedList;
