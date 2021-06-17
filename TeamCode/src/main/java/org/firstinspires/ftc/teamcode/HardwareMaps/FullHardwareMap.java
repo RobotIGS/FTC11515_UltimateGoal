@@ -15,6 +15,7 @@ public class FullHardwareMap extends BaseHardwareMap {
         this.motor_gripper = hwMap.get(DcMotor.class, "hub1_motorport3");
 
         servo_conveyor = hwMap.get(Servo.class, "hub1_servoport1");
+        servo_gripper = hwMap.get(Servo.class, "hub1_servoport0");
 
         motor_front_right = hwMap.get(DcMotor.class, "hub2_motorport0");
         motor_rear_right = hwMap.get(DcMotor.class, "hub2_motorport1");
