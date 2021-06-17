@@ -10,11 +10,15 @@ import org.firstinspires.ftc.teamcode.Tools.OmniWheel;
 public class FullControl extends OpMode {
     BaseHardwareMap robot;
     OmniWheel omniwheel;
+    int conveyor_status;
+    int conveyor_button_status;
 
     @Override
     public void init() {
         robot = new FullHardwareMap(hardwareMap);
         omniwheel = new OmniWheel(robot);
+        conveyor_status = 0;
+        conveyor_button_status = 0;
     }
 
     @Override
@@ -27,19 +31,28 @@ public class FullControl extends OpMode {
             robot.motor_flyingwheel_right.setPower(0);
         }
 
-        if (gamepad1.dpad_left){
-            robot.servo_conveyor.setPosition(0.5); // conveyor aus
-            robot.motor_collector.setPower(0);
-        }
-        else if (gamepad1.dpad_up) {
+        if (gamepad1.dpad_up && conveyor_button_status != 1 && conveyor_status != 1) {
             robot.servo_conveyor.setPosition(0); // conveyor forwaerts
             robot.motor_collector.setPower(1);
-        }
-        else if (gamepad1.dpad_down) {
+            conveyor_button_status = 1;
+        } else if (gamepad1.dpad_up && conveyor_button_status != 1 && conveyor_status == 1) {
+            robot.servo_conveyor.setPosition(0.5); // conveyor aus
+            robot.motor_collector.setPower(0);
+            conveyor_button_status = 1;
+        } else if (!gamepad1.dpad_up && conveyor_button_status == 1) {
+            conveyor_button_status = 0;
+
+        } else if (gamepad1.dpad_down && conveyor_button_status != -1 && conveyor_status != -1) {
             robot.servo_conveyor.setPosition(1); // conveyor rueckwaerts
             robot.motor_collector.setPower(-1);
+            conveyor_button_status = -1;
+        } else if (gamepad1.dpad_down && conveyor_button_status != -1 && conveyor_status == -1) {
+            robot.servo_conveyor.setPosition(0.5); // conveyor aus
+            robot.motor_collector.setPower(0);
+            conveyor_button_status = -1;
+        } else if (!gamepad1.dpad_down && conveyor_button_status == -1) {
+            conveyor_button_status = 0;
         }
-
 
         omniwheel.setMotors(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
         double[] result = OmniWheel.calculate(
