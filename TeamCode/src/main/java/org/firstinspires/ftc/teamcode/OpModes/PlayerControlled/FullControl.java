@@ -35,21 +35,26 @@ public class FullControl extends OpMode {
             robot.servo_conveyor.setPosition(0); // conveyor forwaerts
             robot.motor_collector.setPower(1);
             conveyor_button_status = 1;
+            conveyor_status = 1;
         } else if (gamepad1.dpad_up && conveyor_button_status != 1 && conveyor_status == 1) {
             robot.servo_conveyor.setPosition(0.5); // conveyor aus
             robot.motor_collector.setPower(0);
             conveyor_button_status = 1;
+            conveyor_status = 0;
         } else if (!gamepad1.dpad_up && conveyor_button_status == 1) {
             conveyor_button_status = 0;
+        }
 
-        } else if (gamepad1.dpad_down && conveyor_button_status != -1 && conveyor_status != -1) {
+        else if (gamepad1.dpad_down && conveyor_button_status != -1 && conveyor_status != -1) {
             robot.servo_conveyor.setPosition(1); // conveyor rueckwaerts
             robot.motor_collector.setPower(-1);
             conveyor_button_status = -1;
+            conveyor_status = -1;
         } else if (gamepad1.dpad_down && conveyor_button_status != -1 && conveyor_status == -1) {
             robot.servo_conveyor.setPosition(0.5); // conveyor aus
             robot.motor_collector.setPower(0);
             conveyor_button_status = -1;
+            conveyor_status = 0;
         } else if (!gamepad1.dpad_down && conveyor_button_status == -1) {
             conveyor_button_status = 0;
         }
