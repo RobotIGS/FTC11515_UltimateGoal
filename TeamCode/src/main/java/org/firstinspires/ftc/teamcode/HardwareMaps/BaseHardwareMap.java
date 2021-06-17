@@ -22,11 +22,11 @@ public abstract class BaseHardwareMap {
     public DistanceSensor distanceSensor_left_down;
     public DistanceSensor distanceSensor_left_up;
 
-
     // State used for updating telemetry
-    private HardwareMap hwMap;
+    public HardwareMap hwMap;
 
     public BaseHardwareMap(HardwareMap hwMap) {
+        this.hwMap = hwMap;
         init(hwMap);
     }
 
