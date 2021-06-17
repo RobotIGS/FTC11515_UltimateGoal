@@ -13,6 +13,7 @@ public abstract class BaseHardwareMap {
     public DcMotor motor_gripper;
 
     public Servo servo_conveyor;
+    public Servo servo_gripper;
 
     public ColorSensor colorSensor_right;
     public ColorSensor colorSensor_left;
