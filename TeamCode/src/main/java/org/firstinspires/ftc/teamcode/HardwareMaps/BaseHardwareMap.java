@@ -12,6 +12,7 @@ public abstract class BaseHardwareMap {
     public DcMotor motor_collector;
     public DcMotor motor_gripper;
 
+    public Servo servo_collector;
     public Servo servo_conveyor;
     public Servo servo_gripper;
 
