@@ -30,15 +30,15 @@ public class ColorTools {
      * it returns true if the color is red
      * red is between 0-60° or 330-360° (hue) and with saturation over 0.3
      *
-     * @param colorSenseRed is the color sensor we get our values from
+     * @param colorSensor is the color sensor we get our values from
      * @return it true or false
      */
-    public boolean isRed(ColorSensor colorSenseRed) {
-        float[] hsvIsRed = showHSV(colorSenseRed);
+    public boolean isRed(ColorSensor colorSensor) {
+        float[] hsvValues = showHSV(colorSensor);
 
-        if (hsvIsRed[0] >= 0 && hsvIsRed[0] <= 60 && hsvIsRed[1] >= 0.27) {
+        if (hsvValues[0] >= 0 && hsvValues[0] <= 60 && hsvValues[1] >= 0.27) {
             return true;
-        } else if (hsvIsRed[0] >= 330 && hsvIsRed[0] <= 360) {
+        } else if (hsvValues[0] >= 330 && hsvValues[0] <= 360) {
             return true;
         }
 
@@ -49,23 +49,23 @@ public class ColorTools {
      * it returns true if the color is blue
      * blue is between 120-290° (hue) and with saturation over 0.3
      *
-     * @param colorSenseBlue is the color sensor we get our values from
+     * @param colorSensor is the color sensor we get our values from
      * @return true or false
      */
-    public boolean isBlue(ColorSensor colorSenseBlue) {
-        float[] hsvIsBlue = showHSV(colorSenseBlue);
+    public boolean isBlue(ColorSensor colorSensor) {
+        float[] hsvValues = showHSV(colorSensor);
 
-        if (hsvIsBlue[0] >= 160 && hsvIsBlue[0] <= 290) { //[0] 120, && hsvIsBlue[1] >= 2 &&  && hsvIsBlue[2] <= 7
+        if (hsvValues[0] >= 160 && hsvValues[0] <= 290  && hsvValues[1] >= 0.27 ) { //[0] 120, && hsvValues[1] >= 2 &&  && hsvValues[2] <= 7
             return true;
         }
 
         return false;
     }
 
-    public boolean isWhite(ColorSensor colorSenseWhite) {
-        float[] hsvIsWhite = showHSV(colorSenseWhite);
+    public boolean isWhite(ColorSensor colorSensor) {
+        float[] hsvValues = showHSV(colorSensor);
 
-        if (hsvIsWhite[1] >= 160 && hsvIsWhite[2] <= 290) { //[0] 120, && hsvIsBlue[1] >= 2 &&  && hsvIsBlue[2] <= 7
+        if (hsvValues[1] < 0.1 && hsvValues[2] > 150) {
             return true;
         }
 
