@@ -21,7 +21,6 @@ public class FullControl extends OpMode {
         conveyor_button_status = 0;
 
         robot.servo_conveyor.setPosition(0.5);
-        robot.servo_collector.setDirection();
     }
 
     @Override
@@ -62,7 +61,7 @@ public class FullControl extends OpMode {
             conveyor_button_status = 0;
         }
 
-        omniwheel.setMotors(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
+        omniwheel.setMotors(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
         double[] result = OmniWheel.calculate(
                 gamepad1.left_stick_y,
                 gamepad1.left_stick_x,
