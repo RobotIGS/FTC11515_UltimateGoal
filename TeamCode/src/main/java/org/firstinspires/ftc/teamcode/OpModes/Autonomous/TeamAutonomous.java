@@ -7,7 +7,7 @@ import org.firstinspires.ftc.teamcode.Tools.ColorTools;
 import org.firstinspires.ftc.teamcode.Tools.OmniWheel;
 
 @Autonomous
-public class ExampleAutonomous extends LinearOpMode {
+public class TeamAutonomous extends LinearOpMode {
     FullHardwareMap robot;
     ColorTools colorTools;
     OmniWheel omniWheel;
@@ -19,12 +19,11 @@ public class ExampleAutonomous extends LinearOpMode {
         omniWheel = new OmniWheel(robot);
 
         waitForStart();
+        // faehrt ruckwaerts
+        omniWheel.setMotors(0.25, 0, 0);
 
-        omniWheel.setMotors(-1, 0, 0);
-
-        while (!colorTools.isBlue(robot.colorSensor_right) && opModeIsActive()) {
+        while (!colorTools.isWhite(robot.colorSensor_right) && opModeIsActive()) {
         }
-
         omniWheel.setMotors(0, 0, 0);
     }
 }

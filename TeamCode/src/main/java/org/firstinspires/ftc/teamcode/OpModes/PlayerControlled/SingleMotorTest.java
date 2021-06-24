@@ -18,9 +18,27 @@ public class SingleMotorTest extends OpMode {
         robot.motor_front_left.setPower(this.gamepad1.right_stick_y);
 
         if (this.gamepad1.a) {  // wenn knopf a gedrückt
-            robot.motor_rear_left.setPower(1); // schalte den motor an
+            robot.motor_rear_left.setPower(-0.25); // schalte den motor an
         } else { // wenn knopf a NICHT gedrückt
             robot.motor_rear_left.setPower(0); // schalte den motor aus
+        }
+
+        if (this.gamepad1.b) {  // wenn knopf b gedrückt
+            robot.motor_rear_right.setPower(0.25); // schalte den motor an
+        } else { // wenn knopf b NICHT gedrückt
+            robot.motor_rear_right.setPower(0); // schalte den motor aus
+        }
+
+        if (this.gamepad1.x) {  // wenn knopf a gedrückt
+            robot.motor_front_left.setPower(-0.25); // schalte den motor an
+        } else { // wenn knopf a NICHT gedrückt
+            robot.motor_front_left.setPower(0); // schalte den motor aus
+        }
+
+        if (this.gamepad1.y) {  // wenn knopf b gedrückt
+            robot.motor_front_right.setPower(0.25); // schalte den motor an
+        } else { // wenn knopf b NICHT gedrückt
+            robot.motor_front_right.setPower(0); // schalte den motor aus
         }
     }
 }

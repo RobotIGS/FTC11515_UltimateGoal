@@ -74,7 +74,7 @@ public class OmniWheel {
 
         double[] wheel_speeds = new double[mat_multiplied.length];
         for (int i = 0; i < mat_multiplied.length; i++){
-            if (i==1 || i == 3){
+            if (i==0 || i == 2){
                 wheel_speeds[i] = mat_multiplied[i];
             } else {
                 wheel_speeds[i] = -mat_multiplied[i];
