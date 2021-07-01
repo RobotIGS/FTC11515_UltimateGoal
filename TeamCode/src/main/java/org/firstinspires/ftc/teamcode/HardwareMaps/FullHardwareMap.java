@@ -20,6 +20,7 @@ public class FullHardwareMap extends BaseHardwareMap {
 
         colorSensor_left = hwMap.get(ColorSensor.class, "hub1_colorsensor1");
         colorSensor_right = hwMap.get(ColorSensor.class, "hub1_colorsensor2");
+        colorSensor_front = hwMap.get(ColorSensor.class, "hub1_colorsensor3");
 
         motor_rear_right = hwMap.get(DcMotor.class, "hub2_motorport0");
         motor_front_right = hwMap.get(DcMotor.class, "hub2_motorport1");

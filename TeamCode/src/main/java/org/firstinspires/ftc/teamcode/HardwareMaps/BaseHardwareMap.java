@@ -18,6 +18,7 @@ public abstract class BaseHardwareMap {
 
     public ColorSensor colorSensor_right;
     public ColorSensor colorSensor_left;
+    public ColorSensor colorSensor_front;
 
     public DistanceSensor distanceSensor_right_down;
     public DistanceSensor distanceSensor_right_up;
