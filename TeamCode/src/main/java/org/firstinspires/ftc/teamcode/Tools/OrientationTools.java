@@ -121,7 +121,7 @@ public class OrientationTools {
     }
 
     public double getDegree360(BNO055IMU imu){
-        return 180+imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.XYZ, AngleUnit.DEGREES).secondAngle;
+        return 180+imu.getAngularOrientation(AxesReference.INTRINSIC, AxesOrder.XYZ, AngleUnit.DEGREES).thirdAngle;
     }
 
     public void driveSidewardTime(long timeInMillis, double power, double smoothness, BNO055IMU imu, OmniWheel wheel, OpMode op){
@@ -138,7 +138,7 @@ public class OrientationTools {
     }
 
 
-    public void driveSidewardEncoder(OpMode op,double distanceForward, double distanceSideways, double speed,OmniWheel wheel, double startPos, BNO055IMU imu, double smoothness, double smoothnessAdjust) {
+    public void driveSidewardEncoder(OpMode op, double distanceForward, double distanceSideways, double speed, OmniWheel wheel, double startPos, BNO055IMU imu, double smoothness, double smoothnessAdjust) {
         double offset = this.getDegree360(imu) - startPos;
 
         while(Math.abs(offset)>2 && opMode.opModeIsActive()){

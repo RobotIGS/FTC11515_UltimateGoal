@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.HardwareMaps;
 
+import com.qualcomm.hardware.bosch.BNO055IMU;
 import com.qualcomm.robotcore.hardware.*;
 
 public abstract class BaseHardwareMap {
@@ -15,6 +16,8 @@ public abstract class BaseHardwareMap {
     public Servo servo_collector;
     public Servo servo_conveyor;
     public Servo servo_gripper;
+
+    public BNO055IMU imu;
 
     public ColorSensor colorSensor_right;
     public ColorSensor colorSensor_left;
