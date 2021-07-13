@@ -20,18 +20,20 @@ public class TeamAutonomous extends LinearOpMode {
 
         waitForStart();
 
-        omniWheel.setMotors(0, -0.25, 0.01);
+        omniWheel.setMotors(0.25, 0, 0);
+        while (!colorTools.isWhite(robot.colorSensor_right) && opModeIsActive()) {}
+        omniWheel.setMotors(0, 0, 0.2);
         while (!colorTools.isWhite(robot.colorSensor_front) && opModeIsActive()) {}
-        omniWheel.setMotors(0.25, 0, 0.01);
+        omniWheel.setMotors(0, 0, 0);
 
         while (opModeIsActive()) {
             if (colorTools.isBlue(robot.colorSensor_left)) {
                 omniWheel.setMotors(0,0,0);
                 break;
             } else if (!colorTools.isWhite(robot.colorSensor_front)) {
-                omniWheel.setMotors(0.1, 0, 0.1);
+                omniWheel.setMotors(0.1, 0, -0.1);
             } else {
-                omniWheel.setMotors(0.4, 0, -0.01);
+                omniWheel.setMotors(0.4, 0, 0.2);
             }
         }
 
