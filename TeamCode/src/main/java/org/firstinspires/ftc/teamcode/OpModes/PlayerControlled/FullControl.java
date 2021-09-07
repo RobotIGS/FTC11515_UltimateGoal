@@ -67,7 +67,7 @@ public class FullControl extends OpMode {
             robot.servo_collector.setPosition(0.7);
         }
 
-        omniwheel.setMotors(-gamepad1.left_stick_y, -gamepad1.left_stick_x, -gamepad1.right_stick_x);
+        omniwheel.setMotors(-gamepad1.left_stick_y, -gamepad1.left_stick_x, -gamepad1.right_stick_x*0.5 + (-gamepad1.left_stick_x)*0.2);
         double[] result = OmniWheel.calculate(
                 -gamepad1.left_stick_y,
                 -gamepad1.left_stick_x,
@@ -80,5 +80,11 @@ public class FullControl extends OpMode {
         }
 
         robot.motor_gripper.setPower(gamepad1.left_trigger - gamepad1.right_trigger);
+
+        if (gamepad1.dpad_left && gamepad1.x) {
+            robot.servo_collector.setPosition(0);
+        } else if (gamepad1.dpad_right) {
+            robot.servo_collector.setPosition(0.7);
+        }
     }
 }
